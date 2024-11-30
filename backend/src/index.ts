@@ -1,9 +1,12 @@
-import { Hono } from 'hono'
+import app from "@/app";
+import { serve } from "bun";
+import env from "@/env";
 
-const app = new Hono()
+const port = env.PORT;
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+serve({
+  fetch: app.fetch,
+  port,
+});
 
-export default app
+export default app;
