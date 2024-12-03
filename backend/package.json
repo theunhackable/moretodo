@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "db:gen": "bun drizzle-kit generate",
+    "db:push": "bun drizzle-kit push",
+    "db:studio": "bun drizzle-kit studio"
   },
   "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.2.0",
     "@hono/zod-openapi": "^0.18.2",
+    "@libsql/client": "^0.14.0",
+    "drizzle-orm": "^0.36.4",
+    "drizzle-zod": "^0.5.1",
     "hono": "^4.6.12",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.28.1"
   }
 }
-
